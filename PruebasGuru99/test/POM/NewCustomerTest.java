@@ -28,6 +28,7 @@ public class NewCustomerTest {
     Login login;
     Manager manager;
     NewCustomer newCustomer;
+    CustomerRegistered customerRegistered;
     Random r = new Random();
     
     public String numero() { 
@@ -66,6 +67,7 @@ public class NewCustomerTest {
         login = new Login(driver);
         manager = new Manager(driver);
         newCustomer = new NewCustomer(driver);
+        customerRegistered = new CustomerRegistered(driver);
     }
     
     @After
@@ -114,9 +116,13 @@ public class NewCustomerTest {
         //Lleno el formulario de New Customer y le doy clic al boton Submit
         newCustomer.formNew(name,Address,city,state,pin,number,email,pass,date);
         String texto = newCustomer.getConfirmacion();
+        //Guardar el customerId
+        String dataCustomerId = customerRegistered.getDataCustomerId();
         
         System.out.println("aja: ");
         System.out.println(texto);
+        
+        System.out.println("customer id " + dataCustomerId);
         //Verificacion
         //Si la alerta dice "New Customer Successfully", el cliente se creo correctamente
         assertEquals("El sistema dice: " + texto, texto, "Customer Registered Successfully!!!");
