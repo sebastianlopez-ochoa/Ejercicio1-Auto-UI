@@ -52,7 +52,7 @@ public class DeleteCustomerTest {
 
     @After
     public void tearDown() {
-        driver.quit();
+        //driver.quit();
     }
 
     //Licencias

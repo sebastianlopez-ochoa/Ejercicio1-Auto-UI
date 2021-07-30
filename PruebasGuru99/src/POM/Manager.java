@@ -19,6 +19,7 @@ public class Manager {
 
     //Objetos
     By linkDeleteCustomer = By.linkText("Delete Customer");
+    By linkNewCustomer = By.linkText("New Customer");
 
     //Constructor
     public Manager(WebDriver driver) {
@@ -29,5 +30,9 @@ public class Manager {
     //Dar clic hipervinculo Delete Customer
     public void clickDeleteCustomer() {
         driver.findElement(linkDeleteCustomer).click();
+    }
+    //Dar clic hipervinculo New Customer
+    public void clickNewCustomer() {
+        driver.findElement(linkNewCustomer).click();
     }
 }
