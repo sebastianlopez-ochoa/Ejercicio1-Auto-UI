@@ -28,7 +28,7 @@ public class NewCustomer {
     By txtCustomerPassword = By.name("password");
     By btnSubmit = By.name("sub");
     By dates = By.name("dob");
-    By lol = By.className("heading3");
+    By Register = By.className("heading3");
 
     //Constructor
     public NewCustomer(WebDriver driver) {
@@ -66,8 +66,7 @@ public class NewCustomer {
     }   
     
     public String getConfirmacion() {
-        String x = driver.findElement(lol).getText();
-        
+        String x = driver.findElement(Register).getText();        
         return x;
     }
     
@@ -92,6 +91,5 @@ public class NewCustomer {
         this.setTxtCustomerEmail(email);
         this.setTxtCustomerPassword(pass);
         this.clickSubmit();
-        this.getConfirmacion();
     }
 }
