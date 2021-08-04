@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
  * @author Wilber
  */
 public class NewCustomer {
-    
+
     //Objeto tipo WebDriver
     WebDriver driver;
 
@@ -28,7 +28,6 @@ public class NewCustomer {
     By txtCustomerPassword = By.name("password");
     By btnSubmit = By.name("sub");
     By dates = By.name("dob");
-    By Register = By.className("heading3");
 
     //Constructor
     public NewCustomer(WebDriver driver) {
@@ -40,47 +39,46 @@ public class NewCustomer {
     public void setTxtCustomerName(String Name) {
         driver.findElement(txtCustomerName).sendKeys(Name);
     }
+
     public void setTxtCustomerAddress(String Address) {
         driver.findElement(txtCustomerAddress).sendKeys(Address);
     }
+
     public void setTxtCustomerCity(String City) {
         driver.findElement(txtCustomerCity).sendKeys(City);
     }
+
     public void setTxtCustomerState(String State) {
         driver.findElement(txtCustomerState).sendKeys(State);
     }
+
     public void setTxtCustomerPin(String Pin) {
         driver.findElement(txtCustomerPin).sendKeys(Pin);
     }
+
     public void setTxtCustomerNumber(int Number) {
         driver.findElement(txtCustomerNumber).sendKeys(Integer.toString(Number));
     }
+
     public void setTxtCustomerEmail(String Email) {
         driver.findElement(txtCustomerEmail).sendKeys(Email);
     }
+
     public void setTxtCustomerPassword(String Password) {
         driver.findElement(txtCustomerPassword).sendKeys(Password);
-    }      
+    }
+
     public void setDate(String date) {
         driver.findElement(dates).sendKeys(date);
-    }   
-    
-    public String getConfirmacion() {
-        String x = driver.findElement(Register).getText();        
-        return x;
     }
-    
+
     //Dar clic boton
     public void clickSubmit() {
         driver.findElement(btnSubmit).click();
     }
 
-    
-    
-    
-    
     //Invoco las acciones que cree anteriormente
-    public void formNew(String name,String Address,String city,String state,String pin,int number,String email,String pass, String date) {
+    public void formNew(String name, String Address, String city, String state, String pin, int number, String email, String pass, String date) {
         this.setTxtCustomerName(name);
         this.setDate(date);
         this.setTxtCustomerAddress(Address);
@@ -92,4 +90,5 @@ public class NewCustomer {
         this.setTxtCustomerPassword(pass);
         this.clickSubmit();
     }
+
 }

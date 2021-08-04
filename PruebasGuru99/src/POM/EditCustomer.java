@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
  *
  * @author SEBASTIAN
  */
-public class DeleteCustomer {
+public class EditCustomer {
 
     //Objeto tipo WebDriver
     WebDriver driver;
@@ -22,7 +22,7 @@ public class DeleteCustomer {
     By btnSubmit = By.name("AccSubmit");
 
     //Constructor
-    public DeleteCustomer(WebDriver driver) {
+    public EditCustomer(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -38,7 +38,7 @@ public class DeleteCustomer {
     }
 
     //Invoco las acciones que cree anteriormente
-    public void formDelete(String id) {
+    public void formEdit(String id) {
         this.setTxtCustomerId(id);
         this.clickSubmit();
     }
